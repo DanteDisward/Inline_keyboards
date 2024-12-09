@@ -76,5 +76,10 @@ async def info_about_the_bot(message):
     await message.answer('Это тренировочный бот.', reply_markup=keyboard)
 
 
+@dispatcher.message_handler()
+async def all_message(message):
+    print("Введите команду /start, чтобы начать общение.")
+
+
 if __name__ == "__main__":
     executor.start_polling(dispatcher, skip_updates=True)
